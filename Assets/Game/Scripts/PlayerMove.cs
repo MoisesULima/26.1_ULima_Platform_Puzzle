@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] float _speed;
+
     Rigidbody2D _body;
     // Acciones para el control
     InputAction _moveAction;
@@ -30,6 +32,16 @@ public class PlayerMove : MonoBehaviour
         // Guardamos el movimiento, de acuerdo a lo presionado en el teclado
         Vector2 move = _moveAction.ReadValue<Vector2>();
         // Mandamos los valores de x, a la velocidad x del player
-        _body.linearVelocityX = move.x * 5f;
+        _body.linearVelocityX = move.x * _speed;
+        // Preguntamos si nos estamos moviendo en el eje x, y si se mueve preguntamos hacia donde apunta
+        if (move.x != 0)
+        {
+            // Escalamos en el eje x -> 1 (mira a la derecha) -1 (mira a la izquierda)
+            if (move.x > 0)
+                transform.localScale = new Vector3(1, 1, 1);
+            else
+                transform.localScale = new Vector3(-1, 1, 1);
+        }
+        
     }
 }
