@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float _speed;
 
+    // Player Components
     Rigidbody2D _body;
+    Animator _animator;
     // Acciones para el control
     InputAction _moveAction;
 
@@ -13,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     {
         // Detectamos y guardamos el RigidBody2D del player
         _body = GetComponent<Rigidbody2D>();
+        // Detectamos y guardamos el Animator del player
+        _animator = GetComponent<Animator>();
 
         _moveAction = InputSystem.actions["Player/Move"];
     }
@@ -43,5 +48,6 @@ public class PlayerMove : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
         }
         
+        _animator.SetInteger("speedX", (int)move.x);
     }
 }
