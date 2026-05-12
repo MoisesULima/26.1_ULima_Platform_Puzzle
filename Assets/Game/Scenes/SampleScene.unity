@@ -3450,6 +3450,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &543158496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543158497}
+  m_Layer: 0
+  m_Name: FloorDetect
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &543158497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543158496}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173278748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,7 +3579,7 @@ GameObject:
   - component: {fileID: 994501416}
   - component: {fileID: 994501415}
   - component: {fileID: 994501414}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TilemapGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5191,7 +5222,8 @@ Transform:
   m_LocalPosition: {x: 1.82, y: 1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 543158497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173278749
@@ -5241,7 +5273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbe8ffb0fc45e041826671bea1b85ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _impulse: 10
+  _impulse: 12
+  _sizeDetector: 0.25
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1309891777
 GameObject:
   m_ObjectHideFlags: 0
