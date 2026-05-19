@@ -20,6 +20,16 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Como el enemigo tiene colisión, va a ser detectado por este método    
+        if (collision.gameObject.CompareTag(Names.TAG_ENEMY))
+        {
+            // Cuando el player choca con el enemigo, su posición se manda a la posición del checkpoint
+            transform.localPosition = _checkpoint.localPosition;
+        }    
+    }
+
     // Update is called once per frame
     void Update()
     {
