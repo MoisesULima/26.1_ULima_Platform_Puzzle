@@ -8,12 +8,17 @@ public class PlayerDeath : MonoBehaviour
     void Start()
     {
         // Cuando inicie el player, detectamos el checkpoint
-        _checkpoint = GameObject.FindGameObjectWithTag(Names.TAG_CHECKPOINT).transform;
+        GameObject checkpointObj = GameObject.FindGameObjectWithTag(Names.TAG_CHECKPOINT);
+        if (checkpointObj != null)
+        {
+            _checkpoint = checkpointObj.transform;
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(Names.TAG_DEADZONE))
+        if (collision.CompareTag(Names.TAG_DEADZONE) && _checkpoint != null)
         {
             // Cuando el player choca con la zona de muerte, su posición se manda a la posición del checkpoint
             transform.localPosition = _checkpoint.localPosition;
@@ -23,7 +28,7 @@ public class PlayerDeath : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Como el enemigo tiene colisión, va a ser detectado por este método    
-        if (collision.gameObject.CompareTag(Names.TAG_ENEMY))
+        if (collision.gameObject.CompareTag(Names.TAG_ENEMY) && _checkpoint != null)
         {
             // Cuando el player choca con el enemigo, su posición se manda a la posición del checkpoint
             transform.localPosition = _checkpoint.localPosition;
