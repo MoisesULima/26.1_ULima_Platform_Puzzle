@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5515441246932457162}
   - component: {fileID: 1219588884774507167}
   - component: {fileID: 2364340458220827168}
+  - component: {fileID: 2773396611636247468}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -219,3 +220,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFlip
   spriteDefaultFacingRight: 1
+--- !u!114 &2773396611636247468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280056548587307181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59514bb47761234b8b04697efcd5af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimator
+  walkParam: isWalking
+  attackParam: doAttack
+  deathParam: doDeath
