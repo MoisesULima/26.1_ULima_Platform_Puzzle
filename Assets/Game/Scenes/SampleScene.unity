@@ -4061,8 +4061,8 @@ MonoBehaviour:
   _musicTracks:
   - track: 1
     clip: {fileID: 8300000, guid: 00340ddebabbf914d91a4a253096bdc9, type: 3}
-  _sfxVolume: 1
-  _musicVolume: 1
+  _sfxVolume: 0.65
+  _musicVolume: 0.5
 --- !u!4 &714920513
 Transform:
   m_ObjectHideFlags: 0
