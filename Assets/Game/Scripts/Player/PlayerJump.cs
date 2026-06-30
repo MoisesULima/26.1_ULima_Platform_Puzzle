@@ -51,6 +51,8 @@ public class PlayerJump : MonoBehaviour
         {
             Debug.Log("Saltó!");
             _body.linearVelocityY = _impulse;
+
+            AudioManager.Instance.PlaySFX(SoundEffect.Jump);
         }
     }
 }
