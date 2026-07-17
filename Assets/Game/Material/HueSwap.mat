@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DissolveMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 330bb5ca64c75c84aa4291417a2e9e31, type: 3}
+  m_Name: HueSwap
+  m_Shader: {fileID: -6465566751694194690, guid: b400a291b7fd294468374985f6cbe561, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -54,20 +54,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 0
-    - _EdgeWidth: 0.05
+    - _EffectStrength: 1
     - _EnableExternalAlpha: 0
-    - _NoiseScale: 40
+    - _HueSmoothness: 0.05
+    - _HueTolerance: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SaturationMin: 0.3
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeColor: {r: 0, g: 0.38436127, b: 3, a: 3}
+    - _NewColor: {r: 0.19215688, g: 0.3019608, b: 0.47058827, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TargetColor: {r: 0.9725491, g: 0.6117647, b: 0.75294125, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7204969864982766169
+--- !u!114 &1371152869143552308
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
